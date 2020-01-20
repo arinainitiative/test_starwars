@@ -1,0 +1,296 @@
+@font-face {
+    font-family: "Open Sans";
+    src: local("/fonts/OpenSans-Regular.ttf") format("truetype"),
+    local("/fonts/OpenSans-Italic.ttf") format("truetype"),
+    local("/fonts/OpenSans-Bold.ttf") format("truetype"),
+    local("/fonts/OpenSans-Bold.woff2") format("woff2"),
+    local("/fonts/OpenSans-Bold.woff") format("woff"),
+    local("/fonts/OpenSans-BoldItalic.ttf") format("truetype"),
+    local("/fonts/OpenSans-Italic.ttf") format("truetype");
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    min-height: 3000px;
+    overflow: hidden;
+}
+
+h1{
+    font-size: inherit;
+}
+
+h2{
+    font-size: 40px;
+    line-height: 50px;
+    margin: 70px auto 50px auto;
+    text-align: center;
+}
+
+a{
+    color: inherit;
+}
+a:hover{
+    color: #555;
+}
+
+article{
+    width: 70vw;
+    margin: 50px auto;
+    position:relative;
+}
+
+aside{
+    width: auto;
+    padding-right: 2rem;
+    float: left;
+}
+
+.hidden{ visibility: hidden;}
+
+.mobonly{ display: none; }
+
+
+/******************/
+/* Top navigation */
+/******************/
+.navbar{
+    top: 0;
+    width: 100vw;
+    position: fixed;
+    overflow: hidden;
+    font-weight: 700; 
+    line-height: 40px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 999;
+    text-align: center;
+}
+.navbar a{
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: inline-block;
+    list-style-type: none;
+}
+.navbar a:hover {
+    background: #000;
+    color: #c1c1c1;
+}
+
+#burger{
+    display: none;
+}
+  
+/******************/
+/**** parallax ****/
+/******************/
+.parallax{
+    height: 100vh;
+    margin: 0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 305px;
+    perspective: 305px;
+    -webkit-perspective-origin-x: 100%;
+}
+.parallax__group{
+    position: relative;
+    height: 100vh;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform-origin-x: 100%;
+}
+
+.front_layer{
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+}
+.middle_layer{
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+}
+.back_layer{
+    -webkit-transform: translateZ(-300px) scale(2);
+    transform: translateZ(-300px) scale(2);
+    z-index: 3;
+}
+.back_layer2{
+    -webkit-transform: translateZ(-600px) scale(3);
+    transform: translateZ(-600px) scale(3);
+    z-index: 2;
+}
+
+/******************/
+/**** content *****/
+/******************/
+#header{ z-index: 3;}
+#header .back_layer{ background: #000; }
+#article_01{
+    z-index: 4;
+    height: 100vh;
+}
+#article_01 .middle_layer{ background: #fff;}
+#kiloren{ z-index: 2; }
+#kiloren .back_layer2{ background: #fff; }
+#article_02{
+    z-index: 3; 
+    max-height: 65vh;
+    font-size: 14px;
+    line-height: 24px;
+}
+#article_02 .middle_layer{ background: #fff; }
+#footer{
+    z-index: 2;
+    color: #c1c1c1;
+    font-size: 14px;
+    text-align: center;
+    line-height: 35px;;
+    height: 800px;
+    letter-spacing: 0.15em;
+}
+#footer a{ color: #c1c1c1; }
+#footer a:hover{ color: #fff; }
+#footer .back_layer{ background: #000; }
+#footer .footer_links{
+    margin-top: 80px;
+    column-count: 3;
+}
+#footer .footer_links .icon_link{ margin: 0 12px; }
+#footer .footer_links .icon_link:hover{ opacity: 0.8; }
+#footer article{ top: 390px; }
+
+/******************/
+/****** img *******/
+/******************/
+.stars{
+    width: auto;
+    height: 100vh;
+    top: 0;
+    position: relative;
+    background-position: 0px 0px;
+    background-image: url("../img/header-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    perspective: 1px;
+    transform-style: preserve-3d;
+}
+.logo{
+    z-index: 99;
+    height: 100%;
+    width: 100vw;
+    margin: 0 auto;
+    background-attachment: relative;
+    background-position: center;
+    background-image: url("../img/logo.png");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.inner-cover{ /* kylo ren */
+    max-width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-position: top center;
+    background-image: url("../img/kiloren-2x.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.inner-cover2{ /* stormtroopers */
+    max-width: 100vw;
+    max-height: 350px;
+    overflow: hidden;
+    position: relative;
+    background-position: top center;
+    background-image: url("../img/stormtroopers-2x.jpg");
+    background-size: cover;
+}
+.inner-cover3{ /* darth vader */
+    width: auto;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+    background-position: top center;
+    background-image: url("../img/darthvader_2x.jpg");
+    background-color: #181818;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+
+/******************/
+/**** content+ ****/
+/******************/
+.row{
+    display: flex;
+}
+.row:after{
+    display: table;
+    clear: both;
+    content: '';
+}
+.column{
+    float: left;
+    width: 50%;
+    padding-right: 50px;
+}
+.ad{
+    position: -webkit-sticky;
+    position: sticky;
+    float: right;
+    top: 70px;
+    cursor: pointer;
+}
+
+/****************************/
+/**** Responsive Desktop ****/
+/****************************/
+@media only screen and (max-width: 1484px){
+    #article_01{
+        z-index: 4;
+        height: 125vh;
+    }
+    #article_02{
+        z-index: 3; 
+        max-height: 80vh;
+    }
+}
+@media only screen and (max-width: 1203px){
+    #article_01{
+        z-index: 4;
+        height: 130vh;
+    }
+    #article_02{
+        z-index: 3; 
+        max-height: 95vh;
+    }
+}
+@media only screen and (max-width: 1110px){
+    #article_01{
+        z-index: 4;
+        height: 140vh;
+    }
+    #article_02{
+        z-index: 3; 
+        max-height: 100vh;
+    }
+}
